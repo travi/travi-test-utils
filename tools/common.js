@@ -1,7 +1,7 @@
-travi.test = travi.test || {};
+(function (travi) {
+    'use strict';
 
-travi.test.common = {
-    restore: function (toRestore) {
+    function restore(toRestore) {
         function restoreFunction(functionName) {
             if (functionName.restore) {
                 functionName.restore();
@@ -15,9 +15,9 @@ travi.test.common = {
         } else {
             restoreFunction(toRestore);
         }
-    },
+    }
 
-    stubGetTemplates: function () {
+    function stubGetTemplates() {
         sinon.stub(travi.templates, 'get', function () {
             var deferred = new $.Deferred(),
                 promise = deferred.promise();
@@ -26,17 +26,24 @@ travi.test.common = {
 
             return promise;
         });
-    },
+    }
 
-    assertObjectsHaveSameValues: function (expected, actual) {
+    function assertObjectsHaveSameValues(expected, actual) {
         for (var key in expected) {
             if (expected.hasOwnProperty(key)) {
                 assertEquals(expected[key], actual[key]);
             }
         }
-    },
+    }
 
-    assertAjaxCallMadeWith: function (expected, actual) {
+    function assertAjaxCallMadeWith(expected, actual) {
         this.assertObjectsHaveSameValues(expected, actual);
     }
-};
+
+    travi.namespace('travi.test.common', {
+        restore: restore,
+        stubGetTemplates: stubGetTemplates,
+        assertObjectsHaveSameValues: assertObjectsHaveSameValues,
+        assertAjaxCallMadeWith: assertAjaxCallMadeWith
+    });
+}(travi));
