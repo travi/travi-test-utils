@@ -29,7 +29,9 @@
     }
 
     function assertObjectsHaveSameValues(expected, actual) {
-        for (var key in expected) {
+        var key;
+
+        for (key in expected) {
             if (expected.hasOwnProperty(key)) {
                 assertEquals(expected[key], actual[key]);
             }
@@ -63,7 +65,7 @@
         return Math.floor(float(max));
     }
 
-    function string (length) {
+    function string(length) {
         var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
             randomString = '',
             randomNumber,
@@ -102,7 +104,7 @@
         if (callback) {
             callback(data);
         } else {
-            throw('No callback cached for event: ' + name);
+            throw 'No callback cached for event: ' + name;
         }
     }
 
@@ -137,7 +139,7 @@
         if (callback) {
             callback(renderedTemplate);
         } else {
-            throw('No callback cached for template: ' + templateName);
+            throw 'No callback cached for template: ' + templateName;
         }
     }
 
