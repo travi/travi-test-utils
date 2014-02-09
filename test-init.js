@@ -8,4 +8,6 @@ travi.test.testCase = TestCase;
 
 $.fx.off = true;
 
-travi.location.refresh = function () { };
+if (travi.location) {
+    travi.location.refresh = function () { };
+}
