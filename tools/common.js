@@ -17,17 +17,6 @@
         }
     }
 
-    function stubGetTemplates() {
-        sinon.stub(travi.templates, 'get', function () {
-            var deferred = new $.Deferred(),
-                promise = deferred.promise();
-
-            deferred.resolve();
-
-            return promise;
-        });
-    }
-
     function assertObjectsHaveSameValues(expected, actual) {
         var key;
 
@@ -44,7 +33,6 @@
 
     travi.namespace('test.common', {
         restore: restore,
-        stubGetTemplates: stubGetTemplates,
         assertObjectsHaveSameValues: assertObjectsHaveSameValues,
         assertAjaxCallMadeWith: assertAjaxCallMadeWith
     });
