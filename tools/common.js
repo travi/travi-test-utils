@@ -94,6 +94,7 @@
 
     function stub() {
         sinon.stub(travi.events, 'subscribe', function (name, callback) {
+            assert.isFunction(callback);
             callbacks[name] = callback;
         });
     }
