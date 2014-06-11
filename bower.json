@@ -2,6 +2,6 @@
   "name": "traviTestUtils",
   "dependencies": {
     "jquery-mockjax": "~1.5.3",
-    "travi-core": "*"
+    "travi-core": "latest"
   }
 }
