@@ -2,13 +2,15 @@
 addStepDefinitions(function (scenario) {
     'use strict';
 
-    var proto = scenario.World.prototype,
+    var dialog = travi.ui.dialog.core,
+
+        proto = scenario.World.prototype,
         server;
 
     function cleanUpDom() {
         $('body').off();
         $('#scratch').empty();
-        travi.ui.dialog.simple.close();
+        dialog.close();
     }
 
     function cleanUpStubs() {
