@@ -1,4 +1,4 @@
-/*global amplify */
+/*global amplify, addStepDefinitions*/
 addStepDefinitions(function (scenario) {
     'use strict';
 

@@ -22,7 +22,7 @@
 
         for (key in expected) {
             if (expected.hasOwnProperty(key)) {
-                assertEquals(expected[key], actual[key]);
+                assert.equals(expected[key], actual[key]);
             }
         }
     }

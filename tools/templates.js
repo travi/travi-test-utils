@@ -5,8 +5,8 @@
 
     function stub() {
         sinon.stub(travi.templates, 'render', function (templateName, data, callback) {
-            assertObject(data);
-            assertFunction(callback);
+            assert.isObject(data);
+            assert.isFunction(callback);
             callbacks[templateName] = callback;
         });
     }
