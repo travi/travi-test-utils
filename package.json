@@ -1,8 +1,9 @@
 {
-    "name": "travi-test-utils",
-    "devDependencies": {
-        "grunt": "~0.4.2",
-        "load-grunt-config": "~0.7.2",
-        "grunt-jslint": "~1.1.2"
-    }
+  "name": "travi-test-utils",
+  "version": "0.5.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "load-grunt-config": "~0.14.0",
+    "grunt-jslint": "~1.1.12"
+  }
 }
