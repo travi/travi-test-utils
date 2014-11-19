@@ -8,10 +8,17 @@
             }
         }
 
-        if ($.isArray(toRestore)) {
-            $(toRestore).each(function () {
-                restoreFunction(this);
-            });
+        function restoreList() {
+            var i,
+                count = toRestore.length;
+
+            for (i = 0; i < count; i += 1) {
+                restoreFunction(toRestore[i]);
+            }
+        }
+
+        if (toRestore instanceof Array) {
+            restoreList();
         } else {
             restoreFunction(toRestore);
         }

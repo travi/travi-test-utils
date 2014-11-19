@@ -6,7 +6,9 @@ console.log = sinon.log = function () {
 travi.test = travi.test || {};
 travi.test.testCase = TestCase;
 
-$.fx.off = true;
+if ($) {
+    $.fx.off = true;
+}
 
 if (travi.browserProxy) {
     travi.browserProxy.refresh = function () { };
